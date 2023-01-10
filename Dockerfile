@@ -20,3 +20,6 @@ COPY --from=builder /tmp/overviewer-source/overviewer.py /opt/overviewer/
 COPY --from=builder /tmp/overviewer-source/overviewer_core /opt/overviewer/overviewer_core
 
 RUN ln -s /opt/overviewer/overviewer.py /usr/local/bin/overviewer
+
+RUN useradd -ms /bin/bash overviewer
+USER overviewer
