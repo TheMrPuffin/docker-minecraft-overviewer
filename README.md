@@ -1,5 +1,5 @@
 # docker-minecraft-overviewer
-[![Dockerhub BUILD and PUSH](https://github.com/TheMrPuffin/docker-minecraft-overviewer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/TheMrPuffin/docker-minecraft-overviewer/actions/workflows/docker-publish.yml)
+[![Dockerhub BUILD and PUSH](https://github.com/TheMrPuffin/docker-minecraft-overviewer/actions/workflows/docker-publish.yml/badge.svg?event=release)](https://github.com/TheMrPuffin/docker-minecraft-overviewer/actions/workflows/docker-publish.yml)
 ## What is this repo?
 A **docker image** containing **Minecraft Overviewer** which is a tool for rendering high-resolution maps of Minecraft worlds. 
 
