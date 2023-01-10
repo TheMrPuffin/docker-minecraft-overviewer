@@ -14,7 +14,9 @@ RUN python3 setup.py build
 FROM ubuntu:23.04
 
 RUN apt-get update
-RUN apt-get install -y python3-pil python3-dev python3-numpy 
+RUN apt-get install -y python3-pil python3-numpy 
 
 COPY --from=builder /tmp/overviewer-source/overviewer.py /opt/overviewer/
 COPY --from=builder /tmp/overviewer-source/overviewer_core /opt/overviewer/overviewer_core
+
+RUN ln -s /opt/overviewer/overviewer.py /usr/local/bin/overviewer
