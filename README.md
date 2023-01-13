@@ -9,7 +9,7 @@ A **docker image** containing **Minecraft Overviewer** which is a tool for rende
 
 To create a simple container and start using **Minecraft-Overviewer** run the following **Docker** command;
 ``` sh
-docker run -it TheMrPuffin/docker-minecraft-overviewer /bin/bash
+docker run -it themrpuffin/docker-minecraft-overviewer /bin/bash
 ``` 
 **Minecraft-Overviwer** tool is installed and ready to go! It as easy as just typing the command below into the command line; 
 ``` sh
