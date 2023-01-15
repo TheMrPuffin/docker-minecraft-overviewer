@@ -13,6 +13,8 @@ RUN python3 setup.py build
 
 FROM ubuntu:23.04
 
+ENV MCVERSION=latest
+
 RUN apt-get update
 RUN apt-get install -y python3-pil python3-numpy wget
 
@@ -23,3 +25,5 @@ RUN ln -s /opt/overviewer/overviewer.py /usr/local/bin/overviewer
 
 RUN useradd -ms /bin/bash overviewer
 USER overviewer
+
+COPY /scripts /opt/overviewer/scripts

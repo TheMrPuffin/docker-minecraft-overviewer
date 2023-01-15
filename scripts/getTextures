@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "version: $MCVERSION"
+mkdir -p ~/.minecraft/versions/${MCVERSION}/
+wget https://overviewer.org/textures/${MCVERSION} -O ~/.minecraft/versions/${MCVERSION}/${MCVERSION}.jar
+
+
