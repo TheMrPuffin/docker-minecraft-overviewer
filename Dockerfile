@@ -15,15 +15,19 @@ FROM ubuntu:23.04
 
 ENV MCVERSION=latest
 
+RUN useradd -ms /bin/bash overviewer
+
 RUN apt-get update
 RUN apt-get install -y python3-pil python3-numpy wget
 
 COPY --from=builder /tmp/overviewer-source/overviewer.py /opt/overviewer/
 COPY --from=builder /tmp/overviewer-source/overviewer_core /opt/overviewer/overviewer_core
 
+COPY /scripts /opt/overviewer/scripts
+
 RUN ln -s /opt/overviewer/overviewer.py /usr/local/bin/overviewer
 
-RUN useradd -ms /bin/bash overviewer
-USER overviewer
+RUN chown -R 1001 /opt/overviewer
+RUN chgrp -R 1001 /opt/overviewer
 
-COPY /scripts /opt/overviewer/scripts
+USER overviewer
