@@ -20,7 +20,7 @@ ENV MCMAPDIR=/mnt/nginx
 RUN useradd -ms /bin/bash overviewer
 
 RUN apt-get update
-RUN apt-get install -y python3-pil python3-numpy wget
+RUN apt-get install -y python3-pil python3-numpy wget vim
 
 COPY --from=builder /tmp/overviewer-source/overviewer.py /opt/overviewer/
 COPY --from=builder /tmp/overviewer-source/overviewer_core /opt/overviewer/overviewer_core
