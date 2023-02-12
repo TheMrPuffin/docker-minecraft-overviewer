@@ -14,6 +14,8 @@ RUN python3 setup.py build
 FROM ubuntu:23.04
 
 ENV MCVERSION=latest
+ENV MCWORLDDIR=~/world/
+ENV MCMAPDIR=/mnt/nginx
 
 RUN useradd -ms /bin/bash overviewer
 
