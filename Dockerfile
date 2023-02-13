@@ -15,7 +15,7 @@ FROM ubuntu:23.04
 
 ENV OVERVIEWER_MC_VERSION=latest
 ENV OVERVIEWER_MC_WORLD_TAR_DIR=NULL
-ENV OVERVIEWER_MC_WORLD_TAR_SEARCH_TERM = NULL
+ENV OVERVIEWER_MC_WORLD_TAR_SEARCH_TERM=NULL
 ENV OVERVIEWER_MC_WORLD_DIR=~/world/
 ENV OVERVIEWER_OUTPUT_DIR=/mnt/nginx
 
@@ -35,3 +35,5 @@ RUN chown -R 1001 /opt/overviewer
 RUN chgrp -R 1001 /opt/overviewer
 
 USER overviewer
+
+CMD sh /opt/overviewer/scripts/startOverviewer 
