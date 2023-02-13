@@ -1,0 +1,26 @@
+#!/bin/bash
+echo "Starting Minecraft Overviewer Script..."
+
+# Making directory for wget get texture output 
+mkdir -p ~/.minecraft/versions/${OVERVIEWER_MC_VERSION}/
+
+# Get texture files for required minecraft version
+echo "Getting textures for minecraft version $OVERVIEWER_MC_VERSION"
+wget -q https://overviewer.org/textures/${OVERVIEWER_MC_VERSION} -O ~/.minecraft/versions/${OVERVIEWER_MC_VERSION}/${OVERVIEWER_MC_VERSION}.jar
+
+# IF there is a tar file location then untar else just use world folder
+if [ "$OVERVIEWER_MC_WORLD_TAR_DIR" != "NULL" ]; then
+    echo "Finding tar file specified at $OVERVIEWER_MC_WORLD_TAR_DIR with the search term $OVERVIEWER_MC_WORLD_TAR_SEARCH_TERM and extracting the latest one to ~/"
+    # Get latest tar file 
+    OVERVIEWER_TAR=$(find $OVERVIEWER_MC_WORLD_TAR_DIR -name "$OVERVIEWER_MC_WORLD_TAR_SEARCH_TERM" | sort | tail -n 1)
+
+    # Un-tar file to get world file out 
+    tar -xf $OVERVIEWER_TAR -C ~/
+
+    echo "Using world folder at $OVERVIEWER_MC_WORLD_DIR"
+else
+    echo "No tar specificed using world folder at $OVERVIEWER_MC_WORLD_DIR"
+fi
+
+# Run overviewer with the dynamic configuration file
+overviewer --config=/opt/overviewer/scripts/overviewerConfig.py
