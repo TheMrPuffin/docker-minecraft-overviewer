@@ -10,4 +10,4 @@ renders['render'] = {
     }
 
 outputdir = os.environ['OVERVIEWER_OUTPUT_DIR']
-texturepath = '~/.minecraft/versions/$MCVERSION/$MCVERSION.jar' 
+texturepath = '~/.minecraft/versions/$OVERVIEWER_MC_VERSION/$OVERVIEWER_MC_VERSION.jar' 
