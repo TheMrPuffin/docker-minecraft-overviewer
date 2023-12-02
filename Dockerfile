@@ -1,4 +1,4 @@
-FROM ubuntu:23.04 as builder
+FROM ubuntu:23.10 as builder
 
 WORKDIR /tmp
 
@@ -11,7 +11,7 @@ WORKDIR /tmp/overviewer-source
 
 RUN python3 setup.py build
 
-FROM ubuntu:23.04
+FROM ubuntu:23.10
 
 ENV OVERVIEWER_MC_VERSION=latest
 ENV OVERVIEWER_MC_WORLD_TAR_DIR=NULL
